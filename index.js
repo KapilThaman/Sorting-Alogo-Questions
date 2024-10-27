@@ -10,7 +10,7 @@ function BubbleSort(arr){debugger
 }
 console.log(arr);   
 }
-// BubbleSort([10,9,8,7,6,5,4,3]) //bubble sort: Start from 0 and keep on checking if the 1st element is greater than 2nd then swap 
+BubbleSort([10,9,8,7,6,5,4,3]) //bubble sort: Start from 0 and keep on checking if the 1st element is greater than 2nd then swap 
 
 
 // Selection Sort :
@@ -42,4 +42,22 @@ function SelectionSort(arr){
         console.log(arr);
 }
 
-SelectionSort([23,14,12,24,56])// Selection Sort is i = 0 and j = i+1 loop through it selecting the minimum mindex value and swpaimng from i because i is the first value and we want to swap i with the minimum value 
+// SelectionSort([23,14,12,24,56])// Selection Sort is i = 0 and j = i+1 loop through it selecting the minimum mindex value and swpaimng from i because i is the first value and we want to swap i with the minimum value 
+
+function InsertionSort(arr){debugger
+       
+        for(let i = 0 ; i < arr.length; i++  ){
+            let j = i + 1;
+            let key = arr[j];
+            
+                while(i >= 0 && key < arr[i]){
+                    if(arr[j] < arr[i]){
+                        [arr[j],arr[i]] = [arr[i],arr[j]]
+                        
+                    }
+                    i--;
+                }
+        }
+        console.log(arr);
+}
+// InsertionSort([29,10,14,37,14,33,8,11]);// Insertion Sort is done , 
