@@ -10,7 +10,7 @@ function BubbleSort(arr){debugger
 }
 console.log(arr);   
 }
-BubbleSort([10,9,8,7,6,5,4,3]) //bubble sort: Start from 0 and keep on checking if the 1st element is greater than 2nd then swap 
+// BubbleSort([10,9,8,7,6,5,4,3]) //bubble sort: Start from 0 and keep on checking if the 1st element is greater than 2nd then swap 
 
 
 // Selection Sort :
@@ -61,3 +61,55 @@ function InsertionSort(arr){debugger
         console.log(arr);
 }
 // InsertionSort([29,10,14,37,14,33,8,11]);// Insertion Sort is done , 
+
+// Merge Sort 
+
+function merge(array1, array2) {
+    let combined = [];
+    let i = 0;
+    let j = 0;
+    while (i < array1.length && j < array2.length) {
+        if (array1[i] < array2[j]) {
+            combined.push(array1[i]);
+            i++;
+        } else {
+            combined.push(array2[j]);
+            j++;
+        }
+    }
+    while (i < array1.length) {
+        combined.push(array1[i]);
+        i++;
+    }
+    while (j < array2.length) {
+        combined.push(array2[j]);
+        j++;
+    }
+    return combined;
+}
+
+function mergeSort(array) {
+    if (array.length === 1) return array;
+
+    let midIndex = Math.floor(array.length/2);
+    let left = mergeSort(array.slice(0, midIndex));
+    let right = mergeSort(array.slice(midIndex));
+    
+    return merge(left, right);
+}
+
+
+
+
+function test() {
+    let originalArray = [2,4,5,3,1,9,7,6,10];
+    let sortedArray = mergeSort( originalArray );
+
+    console.log( "Original Array:", originalArray );
+    console.log( "\nSorted Array:", sortedArray );
+}
+
+
+test();
+// Solved Merge Sort.
+
